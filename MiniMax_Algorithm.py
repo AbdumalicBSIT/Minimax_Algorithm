@@ -120,7 +120,7 @@ def minimax(board, depth, isMaximizing):
         for key in board.keys():
             if (board[key] == ' '):
                 board[key] = bot
-                score = minimax(board, 0, False) //by changing this to True we can actually defeat the ai, although at that point we cannot call it minimax algo anymore.
+                score = minimax(board, 0, False)
                 board[key] = ' '
                 if (score > bestScore):
                     bestScore = score
@@ -131,7 +131,7 @@ def minimax(board, depth, isMaximizing):
         for key in board.keys():
             if (board[key] == ' '):
                 board[key] = player
-                score = minimax(board, 0, True)
+                score = minimax(board, 0, True) //by changing this to False we can actually defeat the ai, although at that point we cannot call it minimax algo anymore.
                 board[key] = ' '
                 if (score < bestScore):
                     bestScore = score
